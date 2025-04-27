@@ -17,11 +17,11 @@ const converterCurrenciesList = cva(
 )
 
 const converterCurrenciesListItem = cva(
-  "converterCurrenciesListItem p-3 text-sm text-center cursor-pointer font-bold transition-all duration-300 ease-in-out",
+  "converterCurrenciesListItem p-3 text-sm text-center cursor-pointer font-bold transition-all duration-300 ease-in-out hover:bg-gray-200",
   {
     variants: {
       active: {
-        true: "bg-green-400 text-white"
+        true: "bg-green-400 text-white hover:bg-green-400",
       }
     }
   }
@@ -42,6 +42,24 @@ const modalCurrencyContainer = cva(
 const modalCurrencySubstrate = cva(
   "modalCurrencySubstrate relative border bg-white border-gray-800 rounded-2xl p-5 text-slate-600 text-center shadow-[0_4px_0_rgba(0,0,0,0.1)] motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md"
 );
+
+const modalCurrencyList = cva(
+  "grid grid-cols-4 sm:grid-cols-8 w-full h-full max-h-[400px] overflow-y-scroll"
+)
+
+const modalCurrencyListItem = cva(
+  "p-3 flex items-center justify-center cursor-pointer hover:bg-green-200 hover:font-bold transition-all duration-300 ease-in-out",
+  {
+    variants: {
+      activeFrom: {
+        true: "bg-green-400 text-white hover:bg-green-500",
+      },
+      activeTo: {
+        true: "bg-orange-400 text-white hover:bg-orange-500",
+      }
+    }
+  }
+)
 
 
 function CurrencyConverter() {
@@ -152,10 +170,10 @@ function CurrencyConverter() {
         {modalIsOpen && <ModalWindow onClose={closeModal}>
           <div className={modalCurrencyContainer()}>
             <div className={modalCurrencySubstrate()}>
-              <div className="grid grid-cols-4 sm:grid-cols-8 w-full h-full max-h-[400px] overflow-y-scroll">
+              <div className={modalCurrencyList()}>
                 {
                   Object.keys(currenciesData).map(currency => (
-                    <div key={currency} className="p-3 flex items-center justify-center" onClick={() => handleSetCurrence(currency)}>
+                    <div key={currency} className={modalCurrencyListItem( {activeFrom: currency === selectedFromCurrency, activeTo: currency === selectedToCurrency})} onClick={() => handleSetCurrence(currency)}>
                       <p className="text-sm">{currency}</p>
                     </div>
                   ))
