@@ -98,13 +98,13 @@ function UsersInviter() {
             <input  className={usersSearchInput()} name="search" type='text' value={inputSearchValue} onChange={(e) => setInputSearchValue(e.target.value)} maxLength={30} placeholder='Search' />
           </div>
 
-          {  isLoading ? <Loader /> : <Users items={inputSearchValue ? filteredUsers : users} invitedUsers={invitedUsers} setInvitedUsers={setInvitedUsers} />}
+          {  isLoading ? <Loader spinnerColor='border-orange-400' /> : <Users items={inputSearchValue ? filteredUsers : users} invitedUsers={invitedUsers} setInvitedUsers={setInvitedUsers} />}
 
           <button onClick={handleInviteClick} hidden={isLoading} className={baseButton({className: 'bg-orange-400 hover:bg-orange-500 active:bg-orange-600 text-white mt-auto border-none'})}>Invite</button>
         </div>)}
 
         { usersInviterStatement === 2 && (<div className={usersCompleted()}>
-          <img className={usersCompletedImg()} src="public/images/check.png" alt="Success image" />
+          <img className={usersCompletedImg()} src="../public/images/check.png" alt="Success image" />
           <p className={usersCompletedTitle()}>Success!</p>
           <p className={usersCompletedDescription()}>
             {`You have invited `}

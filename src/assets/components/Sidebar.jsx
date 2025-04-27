@@ -35,7 +35,7 @@ const sidebarNav = cva(
 );
 
 const sidebarNavLink = cva(
-  "sidebarNavLink border border-gray-800 rounded-2xl py-2 px-5 text-slate-600 text-base font-bold text-center cursor-pointer mx-[10px] transition-all duration-75 ease-in-out shadow-[0_4px_0_rgba(0,0,0,0.2)] hover:-translate-y-[2px] active:translate-y-[2px] active:shadow-none",
+  "sidebarNavLink border border-gray-800 rounded-2xl py-2 px-5 text-slate-600 text-sm font-bold text-center cursor-pointer mx-[10px] transition-all duration-75 ease-in-out shadow-[0_4px_0_rgba(0,0,0,0.2)] hover:-translate-y-[2px] active:translate-y-[2px] active:shadow-none",
   {
     variants: {
       active: {

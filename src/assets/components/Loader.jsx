@@ -1,25 +1,28 @@
-import { cva } from 'class-variance-authority'
-import React from 'react'
+import { cva } from "class-variance-authority";
+import React from "react";
 
 const loaderContent = cva(
-  "loaderContent bg-white bg-opacity-70 flex flex-col gap-4 items-center justify-center my-auto"
-)
+  "loaderContentbg-opacity-70 flex flex-col gap-4 items-center justify-center my-auto"
+);
 
 const loaderSpinner = cva(
-  "loaderSpinner w-12 h-12 border-4 border-orange-400 border-t-transparent rounded-full animate-spin"
-)
+  "loaderSpinner w-12 h-12 border-4 border-t-transparent rounded-full animate-spin"
+);
 
-const loaderText = cva(
-  "loaderText text-gray-600 font-medium"
-)
+const loaderText = cva("loaderText text-gray-600 font-medium");
 
-function Loader() {
+function Loader({ spinnerColor }) {
   return (
     <div className={loaderContent()}>
-      <div className={loaderSpinner()}></div>
-      <p className={loaderText()}>Loading...</p>
+      <div className={loaderSpinner({ className: spinnerColor })}></div>
+      <p className={loaderText()}>
+      Loading <span className='motion-opacity-loop motion-delay-200 motion-duration-800'>.</span>
+      <span className='motion-opacity-loop motion-delay-400 motion-duration-800'>.</span>
+      <span className='motion-opacity-loop motion-delay-600 motion-duration-800'>.</span>
+
+      </p>
     </div>
-  )
+  );
 }
 
-export default Loader
+export default Loader;

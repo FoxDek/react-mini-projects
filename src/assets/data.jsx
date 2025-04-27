@@ -4,6 +4,7 @@ import NotFound from "./mini-projects/NotFound";
 import Modal from "./mini-projects/Modal";
 import Quiz from "./mini-projects/Quiz";
 import UsersInviter from "./mini-projects/UsersInviter";
+import CurrencyConverter from "./mini-projects/CurrencyConverter";
 
 export const routes = [
   {
@@ -40,6 +41,13 @@ export const routes = [
     element: <UsersInviter />,
     fullHeight: true,
     bgColor: "bg-orange-100",
+  },
+  {
+    path: "/currency-converter",
+    title: "Currency converter",
+    element: <CurrencyConverter />,
+    fullHeight: true,
+    bgColor: "bg-green-100",
   },
   {
     path: "*",
