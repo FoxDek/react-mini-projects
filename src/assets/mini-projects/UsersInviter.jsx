@@ -104,7 +104,7 @@ function UsersInviter() {
         </div>)}
 
         { usersInviterStatement === 2 && (<div className={usersCompleted()}>
-          <img className={usersCompletedImg()} src="../public/images/check.png" alt="Success image" />
+          <img className={usersCompletedImg()} src="../images/check.png" alt="Success image" />
           <p className={usersCompletedTitle()}>Success!</p>
           <p className={usersCompletedDescription()}>
             {`You have invited `}
