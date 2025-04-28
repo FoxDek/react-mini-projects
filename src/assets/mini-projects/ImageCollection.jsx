@@ -32,6 +32,12 @@ function ImageCollection() {
   const [activePage, setActivePage] = useState(1)
   const [searchValue, setSearchValue] = useState('')
 
+  const handlePaginationItemClick = (index) => {
+    if (!isLoading) {
+      setActivePage(index + 1)
+    }
+  }
+
   useEffect(() => {
     setIsLoading(true);
 
@@ -61,7 +67,7 @@ function ImageCollection() {
 
         <ul className={ImageCollectionPagination()}>
           {
-            [...Array(5)].map((_, index) => <li onClick={() => setActivePage(index + 1)} className={ImageCollectionPaginationItem({ active: activePage === index + 1 })} key={index}>{index + 1}</li>)
+            [...Array(5)].map((_, index) => <li onClick={() => handlePaginationItemClick(index)} className={ImageCollectionPaginationItem({ active: activePage === index + 1 })} key={index}>{index + 1}</li>)
           }
         </ul>
 

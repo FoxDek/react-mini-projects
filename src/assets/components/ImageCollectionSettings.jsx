@@ -40,11 +40,18 @@ const categories = [
 ];
 
 function ImageCollectionSettings({activeCategory, setActiveCategory, isLoading, searchValue, setSearchValue}) {
+
+  const handleSettingsListItemClick = (index) => {
+    if (!isLoading) {
+      setActiveCategory(index)
+    }
+  }
+
   return (
-    <div className={ImageCollectionSettingsContent()} hidden={isLoading}>
+    <div className={ImageCollectionSettingsContent()}>
       <ul className={ImageCollectionSettingsList()}>
         {categories.map((category, index) => (
-          <li key={index} className={ImageCollectionSettingsListItem({ active: activeCategory === index })} onClick={() => setActiveCategory(index)}>{category.name}</li>
+          <li key={index} className={ImageCollectionSettingsListItem({ active: activeCategory === index })} onClick={() => handleSettingsListItemClick(index)}>{category.name}</li>
         ))}
       </ul>
 
