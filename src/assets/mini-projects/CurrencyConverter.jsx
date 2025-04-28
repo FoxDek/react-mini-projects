@@ -169,7 +169,7 @@ function CurrencyConverter() {
 
         {modalIsOpen && <ModalWindow onClose={closeModal}>
           <div className={modalCurrencyContainer()}>
-            <div className={modalCurrencySubstrate()}>
+            <div className={modalCurrencySubstrate()} onClick={(e) => e.stopPropagation()}>
               <div className={modalCurrencyList()}>
                 {
                   Object.keys(currenciesData).map(currency => (

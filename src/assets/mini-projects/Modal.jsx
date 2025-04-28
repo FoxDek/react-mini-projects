@@ -34,19 +34,6 @@ const modalWindowCloseButton = cva(
 
 function Modal() {
   const { modalIsOpen, openModal, closeModal } = useModal();
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  // const handleToggleModal = () => {
-  //   const modalRoot = document.getElementById("modal-root");
-
-  //   if (modalIsOpen) {
-  //     setModalIsOpen(false);
-  //     modalRoot.className = "";
-  //   } else {
-  //     setModalIsOpen(true);
-  //     modalRoot.className = "fixed inset-0 z-50";
-  //   }
-  // };
 
   return (
     <>
@@ -62,7 +49,7 @@ function Modal() {
       {modalIsOpen && (
         <ModalWindow onClose={closeModal}>
           <div className={modalWindowContainer()}>
-            <div className={modalWindowSubstrate()}>
+            <div className={modalWindowSubstrate()} onClick={(e) => e.stopPropagation()}>
               <div className={modalWindowContent()}>
                 <h3 className={modalWindowDescription()}>It`s modal</h3>
                 <img

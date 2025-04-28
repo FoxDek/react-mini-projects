@@ -5,6 +5,7 @@ import Modal from "./mini-projects/Modal";
 import Quiz from "./mini-projects/Quiz";
 import UsersInviter from "./mini-projects/UsersInviter";
 import CurrencyConverter from "./mini-projects/CurrencyConverter";
+import ImageCollection from "./mini-projects/ImageCollection";
 
 export const routes = [
   {
@@ -49,6 +50,20 @@ export const routes = [
     fullHeight: true,
     bgColor: "bg-green-100",
   },
+  {
+    path: "/image-collection",
+    title: "Image collection",
+    element: <ImageCollection />,
+    fullHeight: true,
+    bgColor: "",
+  },
+  // {
+  //   path: "/",
+  //   title: "",
+  //   element: < />,
+  //   fullHeight: true,
+  //   bgColor: "",
+  // },
   {
     path: "*",
     title: "404 Not Found",

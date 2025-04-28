@@ -22,7 +22,9 @@ function ModalWindow({ children, onClose }) {
   }, [onClose]);
 
   return createPortal(
-    <div className={modalWindowOverlay()} onClick={onClose}>{children}</div>,
+    <div className={modalWindowOverlay()} onClick={onClose}>
+      {children}
+    </div>,
     document.getElementById("modal-root")
   );
 }
